@@ -1,0 +1,32 @@
+.img-small_sh {
+    width: 90px;  
+    height: auto;
+	padding: 5px;
+}
+
+.img-small_ix {
+    width: 45px;  
+    height: auto;
+	padding: 5px;
+}
+
+.img-small_vw {
+    width: 160px;  
+    height: auto;
+	padding: 5px;
+    display: block;
+    margin: 0 auto;	
+}
+
+/* Ajuste do tamanho dos ícones SVG de paginação */
+.page-item .page-link svg {
+    width: 8px;
+    height: 8px;
+    vertical-align: middle;
+}
+
+.page-item .page-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
