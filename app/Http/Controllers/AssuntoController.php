@@ -9,7 +9,7 @@ class AssuntoController extends Controller
 {
     public function index()
     {
-        $assuntos = Assunto::simplePaginate(8);
+        $assuntos = Assunto::orderBy('created_at', 'desc')->simplePaginate(8);
         return view('assuntos.index', compact('assuntos'));
     }
 
@@ -21,7 +21,7 @@ class AssuntoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'descricao' => 'required|unique:assuntos,descricao',
+            'descricao' => 'required|string|no_quotes|unique:assuntos,descricao',
         ]);
 
         Assunto::create($request->all());
@@ -41,7 +41,7 @@ class AssuntoController extends Controller
     public function update(Request $request, Assunto $assunto)
     {
         $request->validate([
-            'descricao' => 'required|unique:assuntos,descricao,' . $assunto->codas . ',codas',
+            'descricao' => 'required|string|no_quotes|unique:assuntos,descricao,' . $assunto->codas . ',codas',
         ]);
 
         $assunto->update($request->all());

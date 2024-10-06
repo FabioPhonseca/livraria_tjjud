@@ -103,6 +103,7 @@ return [
     'url'                => 'O formato da URL :attribute é inválido.',
     'uuid'               => 'O campo :attribute deve ser um UUID válido.',
     
+	'no_quotes' => 'O campo :attribute não deve conter aspas simples ou duplas.',
     'custom' => [
         // Adicione suas traduções personalizadas aqui
     ],

@@ -20,6 +20,7 @@
 					<p><strong>Edição:</strong> {{ $livro->edicao }}</p>
 					<p><strong>Ano de Publicação:</strong> {{ $livro->ano_publicacao }}</p>
 					<p><strong>ISBN:</strong> {{ $livro->isbn }}</p>
+					<p><strong>Preço:</strong> {{ $livro->valor }}</p>
 
 					<p><strong>Autores:</strong></p>
 					<ul>

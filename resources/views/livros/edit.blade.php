@@ -21,7 +21,7 @@
             </div>
             <div class="form-group">
                 <label for="ano_publicacao">Ano de Publicação</label>
-                <input type="text" class="form-control" name="ano_publicacao" value="{{ $livro->ano_publicacao }}" required maxlength="4" pattern="\d{4}">
+                <input type="number" class="form-control" name="ano_publicacao" value="{{ $livro->ano_publicacao }}" required min="1800" max="2024">
 		 <small class="form-text text-muted">Insira um ano válido (ex: 2023).</small>
             </div>
             <div class="form-group">

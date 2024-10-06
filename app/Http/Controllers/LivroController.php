@@ -11,7 +11,7 @@ class LivroController extends Controller
 {
     public function index()
     {
-		$livros = Livro::simplePaginate(8);
+		$livros = Livro::orderBy('created_at', 'desc')->simplePaginate(8);
 		return view('livros.index', compact('livros'));
     }
 
@@ -48,11 +48,11 @@ class LivroController extends Controller
     public function store(Request $request)
     {
 		$request->validate([
-            'titulo' => 'required|string',
-            'editora' => 'required',
+            'titulo' => 'required|string|no_quotes',
+            'editora' => 'required|string|no_quotes',
             'edicao' => 'integer',
             'ano_publicacao' => 'nullable|max:4',
-            'isbn' => 'nullable|unique:livros,isbn',
+            'isbn' => 'nullable|string|no_quotes|unique:livros,isbn',
 			'imagem_capa' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
 			'autores' => 'array',
 			'assuntos' => 'array',			
@@ -87,11 +87,11 @@ class LivroController extends Controller
 	public function update(Request $request, Livro $livro)
 	{
 		$request->validate([
-			'titulo' => 'required',
-			'editora' => 'required',
+			'titulo' => 'required|string|no_quotes',
+			'editora' => 'required|string|no_quotes|',
 			'edicao' => 'nullable|integer',
 			'ano_publicacao' => 'nullable|integer',
-			'isbn' => 'nullable|string',
+			'isbn' => 'nullable|string|no_quotes|',
 			'imagem_capa' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
 			'autores' => 'array',
 			'assuntos' => 'array',

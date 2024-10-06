@@ -27,6 +27,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('assuntos.index') }}">Assuntos</a>
                 </li>
+                <li class="nav-item">
+					<a class="nav-link" href="{{ route('relatorio.autores') }}">Relatório</a>
+                </li>				
             </ul>
         </div>
     </nav>

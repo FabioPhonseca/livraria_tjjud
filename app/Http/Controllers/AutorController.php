@@ -9,7 +9,7 @@ class AutorController extends Controller
 {
     public function index()
     {
-        $autores = Autor::simplePaginate(8);
+        $autores = Autor::orderBy('created_at', 'desc')->simplePaginate(8);
         return view('autores.index', compact('autores'));
     }
 
@@ -21,7 +21,7 @@ class AutorController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nome' => 'required|unique:autores,nome',
+            'nome' => 'required|string|no_quotes|unique:autores,nome',
         ]);
 
         Autor::create($request->all());
@@ -41,7 +41,7 @@ class AutorController extends Controller
     public function update(Request $request, Autor $autor)
     {
         $request->validate([
-            'nome' => 'required|unique:autores,nome,' . $autor->codau . ',codau',
+            'nome' => 'required|string|no_quotes|unique:autores,nome,' . $autor->codau . ',codau',
         ]);
 
         $autor->update($request->all());

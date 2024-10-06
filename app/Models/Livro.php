@@ -30,4 +30,16 @@ class Livro extends Model
     {
         return $this->belongsToMany(Autor::class, 'livro_autores')->using(LivroAutor::class);
     }	
+	
+    public function getValorAttribute($value)
+    {
+        return 'R$ ' . number_format($value, 2, ',', '.');
+    }
+
+
+    public function setValorAttribute($value)
+    {
+		$this->attributes['valor'] = str_replace(',', '.', str_replace('R$', '', $value));
+    }	
+	
 }
