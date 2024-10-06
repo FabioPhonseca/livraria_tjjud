@@ -1,28 +1,26 @@
-# .cpanel.yml
-
 deployment:
   tasks:
     - export DEPLOYPATH=/home1/cpkenn38/fabiofonseca.com.br/tjjud
-    - /bin/cp -R public $DEPLOYPAT
-    - /bin/cp -R app $DEPLOYPAT
-    - /bin/cp -R tests $DEPLOYPAT
-    - /bin/cp -R routes $DEPLOYPAT
-    - /bin/cp -R resources $DEPLOYPAT
-    - /bin/cp -R licenses $DEPLOYPAT
-    - /bin/cp -R database $DEPLOYPAT
-    - /bin/cp -R config $DEPLOYPAT
-    - /bin/cp -R bootstrap $DEPLOYPAT
-    - /bin/cp -R .cpanel.yml $DEPLOYPAT
-    - /bin/cp -R .env $DEPLOYPAT
-    - /bin/cp -R vite.config.js $DEPLOYPAT
-    - /bin/cp -R phpunit.xml $DEPLOYPAT
-    - /bin/cp -R package.json $DEPLOYPAT
-    - /bin/cp -R composer.lock $DEPLOYPAT
-    - /bin/cp -R artisan $DEPLOYPAT
-    - /bin/cp -R README.md $DEPLOYPAT
-    - /bin/cp -R .gitignore $DEPLOYPAT
-    - /bin/cp -R composer.json $DEPLOYPAT
-    - /bin/cp -R  $DEPLOYPAT
+    - /bin/cp -R public $DEPLOYPATH
+    - /bin/cp -R app $DEPLOYPATH
+    - /bin/cp -R tests $DEPLOYPATH
+    - /bin/cp -R routes $DEPLOYPATH
+    - /bin/cp -R resources $DEPLOYPATH
+    - /bin/cp -R licenses $DEPLOYPATH
+    - /bin/cp -R database $DEPLOYPATH
+    - /bin/cp -R config $DEPLOYPATH
+    - /bin/cp -R bootstrap $DEPLOYPATH
+    - /bin/cp -R .cpanel.yml $DEPLOYPATH
+    - /bin/cp -R .env $DEPLOYPATH
+    - /bin/cp -R vite.config.js $DEPLOYPATH
+    - /bin/cp -R phpunit.xml $DEPLOYPATH
+    - /bin/cp -R package.json $DEPLOYPATH
+    - /bin/cp -R composer.lock $DEPLOYPATH
+    - /bin/cp -R artisan $DEPLOYPATH
+    - /bin/cp -R README.md $DEPLOYPATH
+    - /bin/cp -R .gitignore $DEPLOYPATH
+    - /bin/cp -R composer.json $DEPLOYPATH
+    - /bin/cp -R  $DEPLOYPATH
 
     - name: Install Composer dependencies
       command: |
