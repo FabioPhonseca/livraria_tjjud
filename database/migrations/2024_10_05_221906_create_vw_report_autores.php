@@ -8,8 +8,7 @@ return new class extends Migration
 {
     public function up()
     {
-        DB::statement("
-            CREATE VIEW IF NOT EXISTS vw_report_autores AS
+        DB::statement("CREATE VIEW vw_report_autores AS
 			SELECT
 				DISTINCT
 				aut.nome

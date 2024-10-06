@@ -25,14 +25,14 @@ deployment:
       command: |
         /opt/cpanel/composer/bin/composer install --no-dev --prefer-dist --optimize-autoloader
 
-    - name: Set correct permissions
-      command: |
-        find . -type f -exec chmod 644 {} \;
-        find . -type d -exec chmod 755 {} \;
 
     - name: Set storage and bootstrap/cache permissions
       command: |
-        chmod -R 775 storage bootstrap/cache
+	chmod -R 775 storage
+	chmod -R 775 bootstrap/cache
+	mkdir -p storage/framework/cache
+	mkdir -p storage/framework/sessions
+	mkdir -p storage/framework/views
 
     - name: Run Laravel migrations
       command: |
@@ -41,5 +41,14 @@ deployment:
     - name: Clear caches
       command: |
         php artisan config:cache
+	php artisan cache:clear
         php artisan route:cache
         php artisan view:cache
+
+
+-----
+chmod -R 775 storage
+chmod -R 775 bootstrap/cache
+mkdir -p storage/framework/cache
+mkdir -p storage/framework/sessions
+mkdir -p storage/framework/views
