@@ -1,0 +1,48 @@
+# .cpanel.yml
+
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home1/cpkenn38/fabiofonseca.com.br/tjjud
+    - /bin/cp -R public $DEPLOYPAT
+    - /bin/cp -R app $DEPLOYPAT
+    - /bin/cp -R tests $DEPLOYPAT
+    - /bin/cp -R routes $DEPLOYPAT
+    - /bin/cp -R resources $DEPLOYPAT
+    - /bin/cp -R licenses $DEPLOYPAT
+    - /bin/cp -R database $DEPLOYPAT
+    - /bin/cp -R config $DEPLOYPAT
+    - /bin/cp -R bootstrap $DEPLOYPAT
+    - /bin/cp -R .cpanel.yml $DEPLOYPAT
+    - /bin/cp -R .env $DEPLOYPAT
+    - /bin/cp -R vite.config.js $DEPLOYPAT
+    - /bin/cp -R phpunit.xml $DEPLOYPAT
+    - /bin/cp -R package.json $DEPLOYPAT
+    - /bin/cp -R composer.lock $DEPLOYPAT
+    - /bin/cp -R artisan $DEPLOYPAT
+    - /bin/cp -R README.md $DEPLOYPAT
+    - /bin/cp -R .gitignore $DEPLOYPAT
+    - /bin/cp -R composer.json $DEPLOYPAT
+    - /bin/cp -R  $DEPLOYPAT
+
+    - name: Install Composer dependencies
+      command: |
+        /opt/cpanel/composer/bin/composer install --no-dev --prefer-dist --optimize-autoloader
+
+    - name: Set correct permissions
+      command: |
+        find . -type f -exec chmod 644 {} \;
+        find . -type d -exec chmod 755 {} \;
+
+    - name: Set storage and bootstrap/cache permissions
+      command: |
+        chmod -R 775 storage bootstrap/cache
+
+    - name: Run Laravel migrations
+      command: |
+        php artisan migrate --force
+
+    - name: Clear caches
+      command: |
+        php artisan config:cache
+        php artisan route:cache
+        php artisan view:cache
