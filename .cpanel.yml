@@ -11,7 +11,7 @@ deployment:
     - /bin/cp -R config $DEPLOYPATH
     - /bin/cp -R bootstrap $DEPLOYPATH
     - /bin/cp -R .cpanel.yml $DEPLOYPATH
-    - /bin/cp -R .env $DEPLOYPATH
+    #- /bin/cp -R .env $DEPLOYPATH
     - /bin/cp -R vite.config.js $DEPLOYPATH
     - /bin/cp -R phpunit.xml $DEPLOYPATH
     - /bin/cp -R package.json $DEPLOYPATH
@@ -20,7 +20,6 @@ deployment:
     - /bin/cp -R README.md $DEPLOYPATH
     - /bin/cp -R .gitignore $DEPLOYPATH
     - /bin/cp -R composer.json $DEPLOYPATH
-    - /bin/cp -R  $DEPLOYPATH
 
     - name: Install Composer dependencies
       command: |
