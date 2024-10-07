@@ -30,7 +30,7 @@ return new class extends Migration
 				LEFT JOIN assuntos ass ON
 					liv_ass.livro_codl = ass.codas
 			ORDER BY
-				aut.nome, liv.titulo, liv.valor;
+				aut.nome, liv.titulo, CONCAT('R$ ', FORMAT(liv.valor, 2, 'de_DE'));
         ");
     }
 

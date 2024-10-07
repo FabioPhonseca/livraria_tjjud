@@ -1,4 +1,5 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home1/cpkenn38/fabiofonseca.com.br/tjjud
-
+    - /bin/cp -R database $DEPLOYPATH
+    - /bin/cp -R resources $DEPLOYPATH
