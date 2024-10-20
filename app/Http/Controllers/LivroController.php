@@ -50,8 +50,8 @@ class LivroController extends Controller
 		$request->validate([
             'titulo' => 'required|string|no_quotes',
             'editora' => 'required|string|no_quotes',
-            'edicao' => 'integer',
-            'ano_publicacao' => 'nullable|max:4',
+            'edicao' => 'required|integer',
+            'ano_publicacao' => 'required|max:4',
             'isbn' => 'nullable|string|no_quotes|unique:livros,isbn',
 			'imagem_capa' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
 			'autores' => 'array',
