@@ -3,7 +3,7 @@
 <p align="center">
     Projeto Laravel 11 com MariaDB<br />
     Um exemplo funcional do projeto está disponível em:
-   <a href="https://www.fabiofonseca.com.br/tjjud/public/index" target="_blank">Livraria TJJUD</a>
+   <a href="https://www.fabiofonseca.com.br/tjjud/public/index.php" target="_blank">Livraria TJJUD</a>
 </p>
 
 ### Instalação
