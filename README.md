@@ -6,6 +6,29 @@
    <a href="https://www.fabiofonseca.com.br/tjjud/public/index.php" target="_blank">Livraria TJJUD</a>
 </p>
 
+<p>
+Aplicação web desenvolvida como projeto de exemplificação técnica, simulando operações básicas de uma livraria.
+Construída com foco em organização de código, boas práticas do framework e ambiente reproduzível.
+</p>
+
+<h2>Tecnologias</h2>
+<ul>
+  <li><strong>PHP / Laravel 11</strong> (arquitetura MVC, rotas, controllers, Eloquent ORM)</li>
+  <li><strong>MariaDB</strong> (migrations, relacionamentos e persistência)</li>
+  <li><strong>Blade</strong> (camada de views)</li>
+  <li><strong>Pest</strong> (testes automatizados)</li>
+  <li><strong>Docker</strong> (ambiente containerizado para dev)</li>
+</ul>
+
+<h2>O que este projeto demonstra</h2>
+<ul>
+  <li>Estrutura MVC e convenções do Laravel</li>
+  <li>Migrations/seeders para versionamento do schema</li>
+  <li>Testes com foco em legibilidade e confiabilidade (Pest)</li>
+  <li>Configuração por variáveis de ambiente (<code>.env</code>)</li>
+  <li>Ambiente reproduzível com Docker</li>
+</ul>
+
 ### Instalação
 
 1. Clone o repositório e entre na pasta do projeto:
